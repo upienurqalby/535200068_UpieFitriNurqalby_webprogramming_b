@@ -1,0 +1,78 @@
+-Selector dan Declaration-
+    p {
+        font-family: Arial; }
+
+    h1, h2, h3 {
+        font-family: Arial;
+        color: yellow; }
+
+-Komentar-
+    p {
+        color: red;
+    }
+
+-Tag/Element HTML-
+    h1 { color: red; }
+
+-Class Selector-
+    .isiteks {
+        color: #99ccff;
+        font-size: 36px;
+    }
+
+    p.isiteks {
+        color: #FF0000;
+        font-size: 36px;
+    }
+
+-ID Selector-
+    #footer {
+        color: blue;
+        border: 1px solid black;
+    }
+
+-Child Selector-
+    div > p {
+        color: white;
+        background: green;
+        padding: 2px;
+    }
+
+-Descendant Selector-
+    div h2 {
+        font-size: 26px;
+        text-align: center;
+    }
+
+-Adjacent Sibling Selector-
+    h1 + h2 {
+        color: red;
+    }
+
+-General Sibling Selector-
+    div ~ p {
+        background-color: yellow;
+    }
+
+-Property Font-Weight-
+    p.normal { font-weight: normal; }
+    p.bold { font-weight: bold; }
+    p.bold span { font-weight: lighter; }
+    p.normal span { font-weight: bolder; }
+    p.satu { font-weight: 100; }
+    p.dua { font-weight: 200; }
+    p.tiga { font-weight: 300; }
+    p.empat { font-weight: 400; }
+    p.lima { font-weight: 500; }
+    p.enam { font-weight: 600; }
+    p.tujuh { font-weight: 700; }
+    p.delapan { font-weight: 800; }
+    p.sembilan { font-weight: 900; }
+
+-Property Border-Color-
+    Elemen {
+        border-color: nilai valid warna;
+    }
+
+-Property Border-
+    p { border: 4px solid red; }
