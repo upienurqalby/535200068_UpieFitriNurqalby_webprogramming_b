@@ -1,0 +1,277 @@
+-GetElementsById()-
+<html>
+    <head>
+        <title>JavaScript getElementById() Method</title>
+
+    </head>
+    <body>
+        <p id="message">A paragraph</p>
+
+        <script>
+            const p = document.getElementById('message');
+            console.log(p);
+        </script>
+    </body>
+</html>
+
+-GetElementsByName()-
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript getElementByName Demo</title>
+</head>
+<body>
+    <p>Please rate the service :</p>
+    <p>
+        <input type="radio" name="rate" value="Very poor"> Very poor
+        <input type="radio" name="rate" value="Poor"> Poor
+        <input type="radio" name="rate" value="OK"> OK
+        <input type="radio" name="rate" value="Good"> Good
+        <input type="radio" name="rate" value="Very Good"> Very Good
+    </p>
+    <p>
+        <button id="btnRate">Submit</button>
+    </p>
+    <script>
+        var btn = document.getElementById('btnRate');
+
+        btn.addEventListener('click', () => {
+            var rates = document.getElementsByName('rate');
+            rates.forEach((rate) => {
+                if (rate.checked) {
+                    alert('You rated : ${rate.value}');
+                }
+            })
+        });
+    </script>
+</body>
+</html>
+
+-GetElementsByTagName()-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript getElementsByTagName() Demo</title>
+</head>
+<body>
+    <h1>JavaScript getElementsByTagName() Demo</h1>
+    <h2>First Heading</h2>
+    <p>This is the first paragraph</p>
+    <h2>Second Heading</h2>
+    <p>This is the second paragraph</p>
+    <h2>Third Heading</h2>
+    <p>This is the third paragraph</p>
+
+    <button id="btnCount">Count H2</button>
+
+    <script>
+        let btn = document.getElementById('btnCount');
+        btn.addEventListener('click', () => {
+            let headings = document.getElementsByTagName('h2');
+            alert('The number of H2 tags : ${headings.length}');
+        });
+    </script>
+</body>
+</html>
+
+-GetElementsByClassName()-
+<div id="app">
+    <header>
+        <nav>
+            <ul id="menu">
+                <li class="item">HTML</li>
+                <li class="item">CSS</li>
+                <li class="item highlight">JavaScript</li>
+                <li class="item">TypeScript</li>
+            </ul>
+        </nav>
+        <h1>getElementsByClassName Demo</h1>
+    </header>
+    <section>
+        <article>
+            <h2 class="heading-secondary">Example 1</h2>
+        </article>
+        <article>
+            <h2 class="heading-secondary">Example 2</h2>
+        </article>
+    </section>
+</div>
+<script>
+    let menu = document.getElementById('menu');
+    let items = menu.getElementsByClassName('item');
+
+    let data1 = [].map.call(items, item => item.textContent);
+
+    console.log(data1);
+
+    let elements = document.getElementsByClassName('heading-secondary');
+
+    let data2 = [].map.call(elements, elem => elem.textContent);
+
+    console.log(data2);
+</script>
+
+-QuerySelector()-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>querySelector() Demo</title>
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <img src="Img/Logo.jpg" alt="Logo" id="logo">
+        </div>
+        <nav class="primary-nav">
+            <ul>
+                <li class="menu-item Current"><a href="#home">Home</a></li>
+                <li class="menu-item"><a href="#services" target="_blank">Services</a></li>
+                <li class="menu-item"><a href="#about">About</a></li>
+                <li class="menu-item"><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Welcome to the JS Dev Agency</h1>
+
+        <div class="container">
+            <section class="section-a">
+                <h2>UI/UX</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem placeat, atque 
+                accusamus voluptas 
+                    laudantium facilis iure adipisci ab veritatis eos neque culpa id nostrum 
+                    tempora tempore minima. 
+                    Adipisci, obcaecati repellat.</p>
+                <button>Read More</button>
+            </section>
+            <section>
+                <h2>PWA Development</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni fugiat similique 
+                illo nobis quibusdan 
+                    comodi aspernatur, tempora doloribus quod, consectetur deserunt, facilis natus 
+                    optio, Iure 
+                    provident labore nihil in earum.</p>
+                <button>Read More</button>
+            </section>
+            <section>
+                <h2>Mobile App Dev</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi eos culpa 
+                laudantium consequatur eal 
+                    Quibusdan, iure obcaecati. Adipisci deserunt, alias repellat eligendi odit 
+                    labore! Fufit iste sit 
+                    laborum debitis eos? </p>
+            </section>
+        </div>
+    </main>
+    <br>
+    <button onclick="myUniversal()">Universal Selector</button>
+    <button onclick="myType()">Type Selector</button>
+    <button onclick="myClass()">Class Selector</button>
+    <button onclick="myId()">Id Selector</button>
+    <button onclick="myAttribute()">Attribute Selector</button>
+    <button onclick="myGroup()">Group Selector</button>
+    <script src="js/Main.js"></script>
+</body>
+</html>
+
+-ParentNode-
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript parentNode</title>
+</head>
+<body>
+    <div id="main">
+        <p class="note">This is a note!</p>
+    </div>
+    
+    <script>
+        let note = document.querySelector('.note');
+        console.log(note.parentNode);
+    </script>
+</body>
+</html>
+
+-ChildNodes[NodeNumber]-
+<ul id="menu">
+    <li class="first">Home</li>
+    <li>Products</li>
+    <li class="current">Customer Support</li>
+    <li>Careers</li>
+    <li>Investors</li>
+    <li>News</li>
+    <li class="last">About Us</li>
+</ul>
+
+-LastChild-
+<script>
+    console.log(content.lastElementChild);
+</script>
+
+-ChildNodes-
+<script>
+    let children = content.childNodes;
+    console.log(children);
+</script>
+
+-Children-
+<script>
+    let children = content.children;
+    console.log(children);
+</script>
+
+-AppendChild-
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JS CreateElement Demo</title>
+</head>
+<body>
+    <script>
+        let div = document.createElement('div');
+
+        div.innerHTML = '<p>Contoh createElement</p>';
+        document.body.appendChild(div);
+    </script>
+</body>
+</html>
+
+-Id pada Elemen-
+<script>
+    div.id = 'content';
+</script>
+
+-Class pada Elemen-
+<script>
+    div.className = 'classcontent';
+</script>
+
+-InnerHTML-
+<script>
+    let text = document.createTextNode('CreateElement menggunakan TextNode');
+    div.appendChild(text);
+</script>
+
+-Event Handling-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+</head>
+<body>
+    <button type="button" id="tombol">Click Me</button>
+    
+    <script>
+        function buttonClick() {
+            alert('button di klik fungsi');
+        }
+
+        document.getElementById('tombol').addEventListener('click', buttonClick);
+    </script>
+</body>
+</html>
